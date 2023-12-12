@@ -27,7 +27,7 @@ export const App = () => {
       }
     }
     getImages();
-  }, []);
+  }, [page, userInput]);
 
   useEffect(() => {
     async function addImmages() {
