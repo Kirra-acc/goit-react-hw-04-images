@@ -58,7 +58,7 @@ export const App = () => {
     setPage(1);
     setLoader(true);
     const inputResult = event.currentTarget.elements.input.value;
-    setImagesData(inputResult);
+    setUserInput(inputResult);
   };
   const openModal = imgUrl => {
     setIsOpenedModal(prev => !prev);
