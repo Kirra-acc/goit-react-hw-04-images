@@ -14,20 +14,20 @@ export const App = () => {
   const [isOpenedModal, setIsOpenedModal] = useState(false);
   const [modalImgUrl, setModalImgUrl] = useState('');
 
-  useEffect(() => {
-    async function getImages() {
-      try {
-        setLoader(true);
-        const images = await getPhotos(userInput, page);
-        setImagesData(images.hits);
-      } catch (error) {
-        console.log(error);
-      } finally {
-        setLoader(false);
-      }
-    }
-    getImages();
-  }, [page, userInput]);
+  // useEffect(() => {
+  //   async function getImages() {
+  //     try {
+  //       setLoader(true);
+  //       const images = await getPhotos(userInput, page);
+  //       setImagesData(images.hits);
+  //     } catch (error) {
+  //       console.log(error);
+  //     } finally {
+  //       setLoader(false);
+  //     }
+  //   }
+  //   getImages();
+  // }, [page, userInput]);
 
   useEffect(() => {
     async function addImmages() {
@@ -56,9 +56,10 @@ export const App = () => {
   const onSubmit = event => {
     event.preventDefault();
     setPage(1);
-    setLoader(true);
+    // setLoader(true);
     const inputResult = event.currentTarget.elements.input.value;
     setUserInput(inputResult);
+    setImagesData([]);
   };
   const openModal = imgUrl => {
     setIsOpenedModal(prev => !prev);
